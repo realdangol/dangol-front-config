@@ -1,44 +1,42 @@
-name: Release
+name: Manual Selective Publish
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "배포할 패키지"
+        required: true
+        type: choice
+        options:
+          - eslint
+          - prettier
+          - tsconfig
 
 jobs:
-  release:
-    name: Publish Changed Packages
+  publish:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          registry-url: "https://registry.npmjs.org/"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v2
         with:
           version: 8
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Create versions & changelogs (if any)
-        run: pnpm changeset version
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: Extract package directory
+        id: extract
+        run: |
+          echo "PACKAGE_SCOPE=${{ github.event.inputs.package }}"
+          PACKAGE_NAME=$(basename "${{ github.event.inputs.package }}")
+          echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+          echo "Directory: packages/$PACKAGE_NAME"
 
-      - name: Publish to npm
-        run: pnpm changeset publish
+      - name: Publish selected package
+        run: |
+          cd packages/${{ steps.extract.outputs.PACKAGE_NAME }}
+          pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
