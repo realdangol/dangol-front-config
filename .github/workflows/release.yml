@@ -26,17 +26,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Extract package directory
-        id: extract
-        run: |
-          echo "PACKAGE_SCOPE=${{ github.event.inputs.package }}"
-          PACKAGE_NAME=$(basename "${{ github.event.inputs.package }}")
-          echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_OUTPUT
-          echo "Directory: packages/$PACKAGE_NAME"
-
       - name: Publish selected package
         run: |
-          cd packages/${{ steps.extract.outputs.PACKAGE_NAME }}
+          cd packages/${{ github.event.inputs.package }}
           pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
