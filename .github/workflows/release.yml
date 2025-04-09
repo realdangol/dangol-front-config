@@ -29,6 +29,6 @@ jobs:
       - name: Publish selected package
         run: |
           cd packages/${{ github.event.inputs.package }}
-          pnpm publish
+          pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
