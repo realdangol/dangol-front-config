@@ -1,5 +1,5 @@
 {
-  "name": "@dangol-front/tsconfig",
+  "name": "@dangol-dev/tsconfig",
   "version": "1.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

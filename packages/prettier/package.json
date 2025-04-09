@@ -1,5 +1,5 @@
 {
-  "name": "@dangol-front/prettier-config",
+  "name": "@dangol-dev/prettier-config",
   "version": "1.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -7,5 +7,8 @@
   "main": "prettier.config.js",
   "peerDependencies": {
     "prettier": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
   }
 }

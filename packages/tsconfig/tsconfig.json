@@ -1,11 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "module": "ESNext",
-    "strict": true,
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "target": "ES2021", // 최신 JS로 컴파일
+    "lib": ["DOM", "DOM.Iterable", "ES2021"], // 브라우저 + 최신 기능 지원
+    "module": "ESNext", // ESM 기반
+    "moduleResolution": "Node", // Node.js 해석 방식
+    "allowJs": false, // JS 파일 허용 여부
+    "jsx": "react-jsx", // React 17+ JSX Transform
+    "noEmit": true, // 실제로 .js 파일은 생성하지 않음 (타입체크만)
+    "strict": true, // 엄격한 타입 체크
+    "forceConsistentCasingInFileNames": true, // 대소문자 구분 오류 방지
+    "esModuleInterop": true, // CommonJS interop 허용
+    "skipLibCheck": true, // 라이브러리 타입 체크 생략 (속도 ↑)
+    "resolveJsonModule": true, // JSON import 허용
+    "isolatedModules": true, // 각 파일 독립적으로 처리 (Next.js 등에서 요구)
+    "baseUrl": ".", // 절대 경로 import의 기준
+    "paths": {
+      "@/*": ["src/*"] // `@/` 절대 경로 import
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
