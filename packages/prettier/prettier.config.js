@@ -1,12 +1,12 @@
 /** @type {import("prettier").Config} */
 module.exports = {
-  semi: true, // 줄 끝에 세미콜론 붙이기
-  singleQuote: true, // 작은따옴표 사용
-  trailingComma: 'all', // 마지막 항목에도 쉼표 붙이기 (멀티라인에서 유리)
-  printWidth: 100, // 한 줄 최대 길이 (보통 100~120)
-  tabWidth: 2, // 탭 간격
-  useTabs: false, // 공백 2칸 대신 탭을 쓸지 여부
-  bracketSpacing: true, // 객체 리터럴 중괄호 양옆에 공백
-  arrowParens: 'avoid', // (x) => x 대신 x => x
-  endOfLine: 'auto', // OS별 줄바꿈 스타일 자동 감지 (CRLF/LF 충돌 방지)
+  printWidth: 100, // 한 줄에 100자까지 허용 (80보다 현실적으로 널리 사용)
+  tabWidth: 2, // 들여쓰기는 2칸
+  useTabs: false, // 스페이스 기반 들여쓰기
+  semi: true, // 항상 세미콜론 사용
+  singleQuote: true, // 문자열은 작은 따옴표 사용
+  trailingComma: 'all', // 마지막에도 항상 쉼표 (diff 줄이기 좋음)
+  bracketSpacing: true, // { foo: bar } 형식 유지
+  arrowParens: 'always', // 화살표 함수 괄호 항상 사용 (일관성 ↑)
+  endOfLine: 'lf', // 줄 끝은 LF (UNIX 스타일, cross-platform 문제 방지)
 };
