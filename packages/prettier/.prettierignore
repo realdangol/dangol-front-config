@@ -1,0 +1,27 @@
+# 빌드 결과물
+dist
+build
+out
+
+# node_modules는 무조건 제외
+node_modules
+
+# 잠재적인 캐시/로그 디렉토리
+coverage
+*.log
+.vscode
+
+# 환경설정 파일들 (Prettier로 포맷 안 하는 게 일반적)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# 특정 언어나 툴에서 생성하는 파일
+*.min.js
+*.bundle.js
+
+# 퍼블릭 정적 파일 (HTML/CSS 직접 안 만지는 경우)
+public
+
+# 테스트 스냅샷 등
+**/__snapshots__/
