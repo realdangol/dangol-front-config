@@ -1,6 +1,6 @@
 {
   "name": "@dangol-dev/eslint-plugin",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
