@@ -1,4 +1,4 @@
-const prettierConfig = require("../../prettier/prettier.config");
+const prettierConfig = require("@dangol-dev/front-prettier-config");
 
 module.exports = {
   extends: ["prettier", "eslint:recommended"],
@@ -7,16 +7,6 @@ module.exports = {
     "prettier/prettier": [
       "error",
       prettierConfig,
-      // {
-      //   printWidth: 100,
-      //   tabWidth: 2,
-      //   useTabs: false,
-      //   semi: true,
-      //   singleQuote: true,
-      //   trailingComma: "all",
-      //   bracketSpacing: true,
-      //   arrowParens: "always",
-      // },
       {
         usePrettierrc: false,
       },
