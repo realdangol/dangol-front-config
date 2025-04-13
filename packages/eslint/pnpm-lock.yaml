@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@dangol-dev/front-prettier-config':
+        specifier: ^1.0.0
+        version: 1.0.0(prettier@3.5.3)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.29.1
         version: 8.29.1(@typescript-eslint/parser@8.29.1(eslint@9.24.0)(typescript@5.8.3))(eslint@9.24.0)(typescript@5.8.3)
@@ -35,6 +38,11 @@ importers:
         version: 3.5.3
 
 packages:
+
+  '@dangol-dev/front-prettier-config@1.0.0':
+    resolution: {integrity: sha512-7wadvqq+gcBzsfPmHok12v91AYsp+MwPovyl550fV/bAwz6oGYSWIXbSJ7aeggIT20Erkr57auTmx4Q+tJdvqQ==, tarball: https://npm.pkg.github.com/download/@dangol-dev/front-prettier-config/1.0.0/f9aa5e508d54afdcfdc3385fe7a1e251e7e2bd92}
+    peerDependencies:
+      prettier: ^3.0.0
 
   '@eslint-community/eslint-utils@4.5.1':
     resolution: {integrity: sha512-soEIOALTfTK6EjmKMMoLugwaP0rzkad90iIWd1hMO9ARkSAyjfMfkRRhLvD5qH7vvM0Cg72pieUfR6yh6XxC4w==}
@@ -1007,6 +1015,10 @@ packages:
     engines: {node: '>=10'}
 
 snapshots:
+
+  '@dangol-dev/front-prettier-config@1.0.0(prettier@3.5.3)':
+    dependencies:
+      prettier: 3.5.3
 
   '@eslint-community/eslint-utils@4.5.1(eslint@9.24.0)':
     dependencies:
