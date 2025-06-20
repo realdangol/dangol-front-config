@@ -1,6 +1,6 @@
 {
-  "name": "@dangol-dev/front-ts-config",
-  "version": "1.0.1",
+  "name": "@realdangol/front-ts-config",
+  "version": "1.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@dangol-dev/front-prettier-config",
+  "name": "@realdangol/front-prettier-config",
   "version": "1.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
