@@ -29,19 +29,15 @@ jobs:
         with:
           node-version: 20
           cache: "pnpm"
-
-      - name: Configure .npmrc
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.ACCESS_TOKEN }}" > ~/.npmrc
-          echo "@dangol-dev:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+          registry-url: https://npm.pkg.github.com/
+          always-auth: true
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Check npm authentication
-        run: pnpm whoami --registry=https://npm.pkg.github.com/
 
       - name: Publish selected package
         run: |
           cd packages/${{ github.event.inputs.package }}
           pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
