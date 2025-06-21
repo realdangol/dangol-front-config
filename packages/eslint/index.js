@@ -3,16 +3,16 @@ const react = require("./utils/react");
 const typescript = require("./utils/typescript");
 
 const recommended = {
-  plugins: ["@dangol-dev"],
-  extends: ["plugin:@dangol-dev/base"],
+  plugins: ["@realdangol"],
+  extends: ["plugin:@realdangol/base"],
   overrides: [
     {
       files: ["**/*.{ts,tsx}"],
-      extends: ["plugin:@dangol-dev/typescript"],
+      extends: ["plugin:@realdangol/typescript"],
     },
     {
       files: ["**/*.{jsx,tsx}"],
-      extends: ["plugin:@dangol-dev/react"],
+      extends: ["plugin:@realdangol/react"],
     },
     {
       files: ["**/*.tsx"],

@@ -1,4 +1,4 @@
-const prettierConfig = require("@dangol-dev/front-prettier-config");
+const prettierConfig = require("@realdangol/front-prettier-config");
 
 module.exports = {
   extends: ["prettier", "eslint:recommended"],
